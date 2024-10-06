@@ -7,6 +7,7 @@ import GsapTimeline from "./GsapTimeline";
 import GsapStagger from "./GsapStagger";
 import GsapScrollTrigger from "./ScrollTrigger";
 import GsapText from "./GsapText";
+import ApplePage from "./ApplePage";
 
 export {
   HomePage,
@@ -18,4 +19,5 @@ export {
   GsapStagger,
   GsapScrollTrigger,
   GsapText,
+  ApplePage,
 };

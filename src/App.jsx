@@ -1,4 +1,9 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import {
   GsapFrom,
   GsapMainPage,
@@ -9,27 +14,36 @@ import {
   HomePage,
   GsapScrollTrigger,
   GsapText,
+  ApplePage,
 } from "./pages";
 import { SiteNavigation } from "./components";
 function App() {
+  const location = useLocation();
+  const showNavigation = location.pathname !== "/apple";
   return (
     <main>
-      <Router>
-        <SiteNavigation />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/gsap" element={<GsapMainPage />} />
-          <Route path="/gsapTo" element={<GsapTo />} />
-          <Route path="/gsapFrom" element={<GsapFrom />} />
-          <Route path="/gsapFromTo" element={<GsapToFrom />} />
-          <Route path="/gsapTimeline" element={<GsapTimeline />} />
-          <Route path="/gsapStagger" element={<GsapStagger />} />
-          <Route path="/scrollTrigger" element={<GsapScrollTrigger />} />
-          <Route path="/gsapText" element={<GsapText />} />
-        </Routes>
-      </Router>
+      {showNavigation && <SiteNavigation />}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/apple" element={<ApplePage />} />
+        <Route path="/gsap" element={<GsapMainPage />} />
+        <Route path="/gsapTo" element={<GsapTo />} />
+        <Route path="/gsapFrom" element={<GsapFrom />} />
+        <Route path="/gsapFromTo" element={<GsapToFrom />} />
+        <Route path="/gsapTimeline" element={<GsapTimeline />} />
+        <Route path="/gsapStagger" element={<GsapStagger />} />
+        <Route path="/scrollTrigger" element={<GsapScrollTrigger />} />
+        <Route path="/gsapText" element={<GsapText />} />
+      </Routes>
     </main>
   );
 }
 
-export default App;
+// Router setup
+const MainApp = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default MainApp;
