@@ -1,4 +1,12 @@
-import { Hero, Highlights, Navbar } from "../components";
+import {
+  Features,
+  Footer,
+  Hero,
+  Highlights,
+  HowItWorks,
+  Model,
+  Navbar,
+} from "../components";
 
 const ApplePage = () => {
   return (
@@ -6,6 +14,10 @@ const ApplePage = () => {
       <Navbar />
       <Hero />
       <Highlights />
+      <Model />
+      <Features />
+      <HowItWorks />
+      <Footer />
     </main>
   );
 };
