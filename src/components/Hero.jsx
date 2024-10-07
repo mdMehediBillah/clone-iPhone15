@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { heroVideo, smallHeroVideo } from "../utils";
