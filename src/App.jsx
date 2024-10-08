@@ -19,12 +19,12 @@ import {
 import { SiteNavigation } from "./components";
 function App() {
   const location = useLocation();
-  const showNavigation = location.pathname !== "/apple";
+  const showNavigation = location.pathname !== "/";
   return (
     <main>
       {showNavigation && <SiteNavigation />}
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<ApplePage />} />
         <Route path="/apple" element={<ApplePage />} />
         <Route path="/gsap" element={<GsapMainPage />} />
         <Route path="/gsapTo" element={<GsapTo />} />
